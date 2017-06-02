@@ -1,0 +1,81 @@
+<div style="padding-top:50px;">&nbsp;</div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                   
+                </div>
+            </div>
+        </div>
+         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            
+         
+            
+            <!-- Sample post content with comments. -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    
+                     <% @questions.each do |question| %>
+
+                     <hr>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                </a>
+                            </div>
+                             <h4><a href="#" style="text-decoration:none;"><b><%= question.user.email %></b></a> – <small><small>42 minutes ago</small></small></h4>
+                   
+                            <hr>
+                            <div class="post-content">
+                                 <h3><strong><%= link_to "#{question.question}", question %></strong></h3>
+                               
+
+                            </div>
+                            <hr>
+                    <div>
+                        <div class="pull-right btn-group-xs">
+
+                         <%= link_to  'Like', like_question_path(:id => question) , method: :put%>
+                         <i class="fa fa-heart" aria-hidden="true"></i> (<%=question.get_upvotes.size%>)
+                        <%= link_to 'Dislike', dislike_question_path(:id => question) , method: :put%>(<%=question.get_downvotes.size%>)
+                        
+
+
+                           <!--  <a class="btn btn-default btn-xs">< Like</a>
+                            <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
+                            <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a> -->
+                        </div>
+                        <div class="pull-left">
+                            <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> <%= question.answers.count %> Answers</p>
+                        </div>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="media">
+                        <div class="pull-right">
+                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                             Post
+                            </button>
+                        </div>
+                        <div class="media-body">
+                            <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
+                        </div>
+                        
+                   
+                    </div>
+                </div>
+            </div>
+            
+            
+               <% end %>
+                        
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>

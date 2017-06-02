@@ -1,0 +1,29 @@
+<h4>Answers: </h4>
+<% question.answers.each do |answer| %>
+<hr>
+<div class="post-content">
+    <div class="panel-default">
+        <div class="panel-body">
+            <div class="pull-left">
+                <a href="#">
+                    <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
+                </a>
+            </div>
+            <h4><a href="#" style="text-decoration:none;"><strong><%= answer.user.email %></p></strong></a></h4>
+            <hr>
+            <div class="post-content">
+               <p><%= answer.answer %></p>
+                <br><small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 12 minutes ago</i></a></small></small>
+            </div>
+             <button class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i>   
+              <%= link_to  'Like', like_answer_path(:id => answer) , method: :put%>(<%=answer.get_upvotes.size%>)</button>
+ <button class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i>   <%= link_to 'Dislike', dislike_answer_path(:id => answer) , method: :put%>(<%=answer.get_downvotes.size%>)</button>
+
+
+	<%= link_to 'Edit', edit_question_answer_path(question,answer) %>
+       <%= link_to 'Destroy', [question,answer], method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    </div>
+</div>
+
+<% end %>
