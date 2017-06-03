@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+
+  get 'user_dashboards' =>  'user_dashboards#index'
+  get 'edit_profile' =>  'user_dashboards#profile'
+
   resources :posts
   devise_for :admins
   devise_for :users
   #get 'home/index'
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships,       only: [:create, :destroy]
   root to: 'home#index'
 
 

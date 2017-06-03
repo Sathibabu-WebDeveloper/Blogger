@@ -69,3 +69,13 @@ overflow: hidden;
 body {
     background-color: #e8e8e8;
 }
+
+
+.field_with_errors{
+  display: block !important;
+       padding: 0px !important; 
+     background-color: #fff !important; 
+    
+}
+
+.field_with_errors

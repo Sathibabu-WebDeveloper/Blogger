@@ -41,11 +41,14 @@ gem 'simple_form', '~> 3.5'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'acts_as_commentable'
 gem 'jquery-turbolinks'
-
+gem 'font-awesome-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+gem 'paperclip', '~> 5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

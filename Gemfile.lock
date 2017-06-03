@@ -67,6 +67,16 @@ GEM
       xpath (~> 2.0)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
+    client_side_validations (9.3.3)
+      jquery-rails (~> 4.3)
+      js_regex (~> 1.2)
+      rails (>= 5.0.0.1, < 5.2)
+    client_side_validations-simple_form (6.3.0)
+      client_side_validations (~> 9.3, >= 9.3.2)
+      simple_form (~> 3.5)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -92,6 +102,8 @@ GEM
     ffi (1.9.18-java)
     ffi (1.9.18-x64-mingw32)
     ffi (1.9.18-x86-mingw32)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hashie (3.5.5)
@@ -108,6 +120,8 @@ GEM
       turbolinks
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    js_regex (1.2.3)
+      regexp_parser (>= 0.3.6, <= 0.5.0)
     jwt (1.5.6)
     less (2.6.0)
       commonjs (~> 0.2.7)
@@ -129,6 +143,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.10.2)
     multi_json (1.12.1)
@@ -171,6 +186,12 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     public_suffix (2.0.5)
     puma (3.8.2)
     puma (3.8.2-java)
@@ -205,6 +226,7 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     ref (2.0.0)
+    regexp_parser (0.4.3)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -286,9 +308,12 @@ DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   byebug
   capybara (~> 2.13)
+  client_side_validations
+  client_side_validations-simple_form
   coffee-rails (~> 4.2)
   devise (~> 4.3)
   devise-bootstrap-views
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
@@ -300,6 +325,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-linkedin
   omniauth-twitter
+  paperclip (~> 5.1)
   puma (~> 3.7)
   rails (~> 5.1.1)
   sass-rails (~> 5.0)
