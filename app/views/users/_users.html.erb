@@ -1,7 +1,8 @@
 <div class="panel panel-default">
                 <div class="panel-body">
                    <div class="media">
-                        <div class="row">
+                        <div class="row"> 
+                          <% if  @users.present?%>
                             <%@users.each do |user|%>
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <div class="media">
@@ -10,12 +11,18 @@
                                     </div>  
                                      <div class="media-body" align="center">                           
                                         <h3><strong><%=user.first_name%></strong></h3>
-                                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                         Follw
-                                        </button>
+                                       <!--  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                         View
+                                        </button> -->
+                                        <%=link_to "View", user , class: "btn btn-success"%>
                                    </div>                    
                                 </div>                	
                             </div>
+                            <%end%>
+                           <%else%>
+                           <div class="col-lg-3 col-md-3 col-sm-6">
+                           <h4 >No Users found..</h4>
+                           </div>
                            <%end%>
                         </div>
                     </div>
