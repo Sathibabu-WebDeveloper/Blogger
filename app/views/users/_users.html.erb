@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+                <div class="panel-body">
+                   <div class="media">
+                        <div class="row">
+                            <%@users.each do |user|%>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="media">
+                                    <div align="center">
+                                        <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="150px" height="150px">
+                                    </div>  
+                                     <div class="media-body" align="center">                           
+                                        <h3><strong><%=user.first_name%></strong></h3>
+                                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                         Follw
+                                        </button>
+                                   </div>                    
+                                </div>                	
+                            </div>
+                           <%end%>
+                        </div>
+                    </div>
+                </div>
+            </div>

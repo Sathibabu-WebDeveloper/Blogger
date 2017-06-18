@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'user_dashboards' =>  'user_dashboards#index'
-  get 'edit_profile' =>  'user_dashboards#profile'
+  get 'user_dashboards' =>  'users#index'
+  get 'edit_profile' =>  'users#profile'
+
+  #get 'show_user' =>  'users#show_user'
+
+  put 'users/:id' =>  'users#update'
+  patch 'users/:id' =>  'users#update'
+
+
+  get 'show_user/:id' => 'users#show', as: :show_user
+
+  get 'followers/:id' => 'users#followers'
+  get 'following/:id' => 'users#following'
 
   resources :posts
   devise_for :admins
@@ -12,6 +23,7 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    resources :questions
   end
   resources :relationships,       only: [:create, :destroy]
   root to: 'home#index'
