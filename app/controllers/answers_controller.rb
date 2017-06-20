@@ -6,14 +6,16 @@ class AnswersController < ApplicationController
 	# answer /answers
   # answer /answers.json
   def create
-     @answer = @question.answers.create(answer_params)
+     # @answer = @question.answers.create(answer_params)
+     @answer = @question.answers.build(answer_params)
   	 @answer.user_id = current_user.id
-
-     if @answer.save
-        redirect_to @question
-     else
-        render 'new'
-     end
+     @answer.save
+     redirect_to request.referer
+     # if @answer.save
+     #    redirect_to @question
+     # else
+     #    render 'new'
+     # end
    # @answer = answer.new(answer_params)
 
     # respond_to do |format|

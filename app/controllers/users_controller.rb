@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     # @followers = @user.followers.paginate(page: params[:page])    
   end
 
+  def remove_avatar
+    @user  = User.find(params[:id])
+    @user.avatar.destroy
+    redirect_to request.referer
+  end
+
   private
 
   def set_user
@@ -40,7 +46,7 @@ class UsersController < ApplicationController
   end
 
    def user_params
-      params.require(:user).permit(:first_name,:last_name,:gender,:tag,:dob,:email,:password,:password_confirmation)
+      params.require(:user).permit(:first_name,:last_name,:gender,:tag,:dob,:email,:password,:password_confirmation,:avatar)
     end
     
 end

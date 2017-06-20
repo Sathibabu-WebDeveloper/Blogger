@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'followers/:id' => 'users#followers'
   get 'following/:id' => 'users#following'
 
+  get 'remove_avatar/:id' => 'users#remove_avatar'
+
   resources :posts
   devise_for :admins
   devise_for :users

@@ -1,19 +1,29 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <%= render 'header'%>
     <hr>
+
+
     <!---->
     <% if current_user.present? && current_user.id == @user.id%>
+
+
+
+
     <div class="panel panel-default">
         <div class="panel-body"> 
             <div class="media">
+             <%= simple_form_for(current_user.questions.build) do |f| %>
                 <div class="pull-right">
-                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <!--   <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                      Post
-                    </button>
+                    </button> -->
+                    <%= f.button :submit %>
                 </div>
                 <div class="media-body">
-                    <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
-                </div>     
+                    <%= f.input :question %>
+                    <!-- <textarea class="form-control" rows="1" placeholder="Ask Question"></textarea> -->
+                </div>
+                  <% end %>     
              </div>
         </div>
     </div>
@@ -59,16 +69,19 @@
                     </div>
                     <hr>
                     <div class="media">
+                    <%= simple_form_for [question, Answer.new] do |f| %>
                         <div class="pull-right">
-                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <!--  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                              Post
-                            </button>
+                            </button> -->
+                             <%= f.button :submit %>
                         </div>
                         <div class="media-body">
-                            <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
+                            <!-- <textarea class="form-control" rows="1" placeholder="Comment"></textarea> -->
+                            <%= f.input :answer %>
                         </div>
                         
-                   
+                        <% end %>
                     </div>
                 </div>
             </div>
@@ -76,3 +89,4 @@
             
                <% end %>
 </div>    
+

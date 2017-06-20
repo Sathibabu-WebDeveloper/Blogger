@@ -3,9 +3,13 @@
         <div class="panel-body">
             <div class="media">
                 <div align="center">
-                    <img class="thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
+
+                    <%= image_tag @user.avatar.url(:medium), :class => "thumbnail img-responsive" %>
+                    <%#= link_to 'Del', remove_avatar_path%>
+               <!--      <img class="thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px"> -->
                 </div>
 
+                <% if current_user.present? && current_user == @user%>
                  <ul class="sidebar-nav nav">
 
                  <li class="sidebar-brand"><%= link_to 'Home', user_dashboards_path %></li>
@@ -28,7 +32,7 @@
                     </li>
                     <li>
                    	 <li><%= link_to 'Update Profile', edit_profile_path %></li>
-                      
+                      <%end%>
                     </li>
                 </ul>              
               
